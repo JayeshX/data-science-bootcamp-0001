@@ -1,0 +1,161 @@
+Q1Write a Python program which accepts the user's first and last name and prints them in reverse order with a space between them.
+ANS:
+fname = str(input("enter first name: "))
+lname = str(input("enter last name: "))
+final = ""
+k = len(fname)
+j = len(lname)
+k-=1
+
+while k>=0:
+
+    print(fname[k])
+    k-=1
+i=j
+for i in range(0,j):
+    print(lname[i]+" ")
+    i-=1
+print(final)
+
+
+Q2Write a Python program which accepts a sequence of comma-separated numbers from the
+user and generates a list and a tuple with those numbers.
+ANS:
+n = int(input("enter the number of elements: "))
+list = []
+gval = input("Enter the values")
+j =True
+num = ""
+for k in range(0, len(gval)):
+    if gval[k] == ",":
+        j = False
+    if j == True:
+        num = num + gval[k]
+    else:
+        list.append(num)
+        num = " "
+        j = True
+tup = tuple(list)
+print(list)
+print(tup)
+
+Q3Write a Python program to display the first and last colours from the following list.
+color_list = ["Red","Green","White" ,"Black"]
+ANS:
+color_list = ['red','green','white','black']
+print(color_list[0]) # first element is always zero
+print(color_list[len(color_list)-1])
+
+Q4Write a Python program to print the documents (syntax, description etc.) of Python built-in
+function(s).
+ANS:
+print(abs.__doc__)
+
+Q5Write a Python program to print the calendar of a given month and year.
+ANS:
+import calendar
+year = int(input("Enter year"))
+month = int(input("month"))
+print(calendar.month(year,month))
+
+Q6Write a Python program to calculate number of days between two dates.
+ANS:
+from datetime import date
+print("Enter start date:")
+sy = int(input("year"))
+sm = int(input("month"))
+sd = int(input("day"))
+print("Enter final date:")
+fy = int(input("year"))
+fm = int(input("month"))
+fd = int(input("day"))
+f1 = date(sy,sm,sd)
+f2 = date(fy,fm,fd)
+ndays = f2-f1
+print("no of days between "+str(f1)+" and "+str(f2)+" is "+str(ndays))
+
+
+Q7Write a Python program to check whether a specified value is contained in a group of values
+ANS:
+sy = int(input("enter no of elements: "))
+data = []
+print("give inputs")
+for i in range(0,sy):
+    data.append(int(input()))
+find = int(input("which number to check: "))
+k = False
+for i in range(0,sy):
+    if data[i]==find:
+        k = True
+print(k)
+
+Q8Write a Python program to create a histogram from a given list of integers.
+ANS:
+Q9Write a Python program to concatenate all elements in a list into a string and return it.
+ANS:
+sy = int(input("enter no of elements: "))
+data = []
+string = ''
+print("give inputs")
+for i in range(0,sy):
+    data.append(int(input()))
+    string = string + str(data[i])
+print(string)
+Q11Write a Python program to check whether a file exists
+ANS:import os.path
+print(os.path.exists("C:\\Users\\User\\Desktop\\temp"))
+print(os.path.exists("C:\\Users\\User\\Desktop\\temp.txt"))
+
+
+PYTHON DATA STRUCTURES
+ARRAYS
+Q1)Write a Python program to create an array of 5 integers and display the array items.
+Access individual element through indexes
+ANS:
+list=[]
+for i in range(0,5):
+    list.append(int(input(str(i+1)+":")))
+print("the elements are:")
+for i in range(0,5):
+    print(list[i])
+
+Q2)Write a Python program to reverse the order of the items in the array.
+ANS:
+list=[]
+n = int(input("Enter no. of elements: "))
+for i in range(0,n):
+    list.append(int(input(str(i+1)+":")))
+print("the reversed elements are:")
+n-=1
+while n>=0:
+    print(list[n])
+    n-=1
+
+Q3)Write a Python program to get the number of occurrences of a specified element in an
+array.
+ANS:
+list=[]
+n = int(input("Enter no. of elements: "))
+for i in range(0,n):
+    list.append(int(input(str(i+1)+":")))
+find =int(input("enter the element to be found"))
+j=0
+for i in range(0,n):
+    if(list[i]==find):
+        j+=1
+print("number of occurences are "+str(j))
+
+
+Q4)Write a Python program to remove the first occurrence of a specified element from an
+array.
+list=[]
+n = int(input("Enter no. of elements: "))
+for i in range(0,n):
+    list.append(int(input(str(i+1)+":")))
+find =int(input("enter the element to be found"))
+for i in range(0,n):
+    if(list[i]==find):
+        j=i
+        break
+list.pop(j)
+print(list)
